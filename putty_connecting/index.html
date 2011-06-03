@@ -9,5 +9,69 @@
 
 <div id="title">Connecting with PuTTY (Windows)</div>
 
+<div class="step">
+  <div>
+    PuTTY is easily the most popular Windows SSH client, and is what we'll use to connect to anapnea.net.
+    (<a href='../unix_ssh'>Not using Windows? Linux and Mac guide here</a>.)
+    Firstly, <a href='http://www.chiark.greenend.org.uk/~sgtatham/putty/'>download PuTTY</a>, and then open it. You should see the window below.
+    Type anapnea.net into the Host Name box. The default settings should work just fine. Click Open to get started.
+  </div>
+
+  <div><img src="images/1.png" alt="Picture of PuTTY main config screen, ready to connect to anapnea.net." /></div>
+</div>
+
+<div class="step">
+  <div>
+    PuTTY will now ask you to verify anapnea.net's fingerprint. It will only ask you this once, when you first connect.
+    The signature should be exactly the same as the one shown below. For a more in-depth comment on fingerprints, please see the bottom of the page.
+  </div>
+
+  <div><img src="images/2.png" alt="PuTTY fingerprint confirmation box." /></div>
+</div>
+
+<div class="step">
+  <div>
+    The prompt login as: will be displayed. Type the username you chose when you spoke to jigglypuff, and then press enter.
+  </div>
+
+  <div><img src="images/3.png" alt="PuTTY window showing login as: daniel" /></div>
+</div>
+
+<div class="step">
+  <div>
+    PuTTY will inform you that it's using keyboard-interactive authentication. This is a fancy name for "I'm going to ask you your password, and you're going to type it in".
+    So, type in your current password as the Password: prompt. If this is your first time, your password will be in an email - remember, you told jigglypuff what your email address was.
+    Note that in the name of security, nothing will appear as you type letters in - not even asterisks.
+    Finally, if you are having trouble logging in, you may want to try typing your password as you read it from the email rather than copying and pasting it - you might accidentally copy a space and that would mess it up.
+  </div>
+
+  <div><img src="images/4.png" alt="PuTTY Password prompt" /></div>
+</div>
+
+<div class="step">
+  <div>
+    All connected! Proceed to use the shell!
+  </div>
+
+  <div><img src="../images/putty_connected.png" alt="PuTTY terminal open." /></div>
+</div>
+
+<div class="step">
+  <div>
+    The default port for SSH is 22, but Anapnea runs SSH on port 443 as well, because when using some internet connections all traffic on port 22 is blocked.
+    (Port 443 is normally used for HTTPS but we use it for SSH. Because 443 is used for HTTPS it is completely impractical for someone to block it.)
+    So if you're having trouble connecting, you can try changing the port, as shown below. Once you've changed the port, connect as normal.
+  </div>
+
+  <div><img src="images/5.png" alt="PuTTY configuration window showing port changed to 443" /></div>
+</div>
+
+<div class="step">
+  <div>A short note on signatures.</div>
+
+  <div>
+    All SSH Traffic is encrypted. But how do you know. <b>TBA</b>.
+</div>
+
   </body>
 </html>
