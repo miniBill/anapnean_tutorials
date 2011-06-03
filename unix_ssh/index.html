@@ -43,6 +43,17 @@
 
 <div class="step">
   <div>
+    The default port for SSH is 22, but Anapnea runs SSH on port 443 as well, because when using some internet connections all traffic on port 22 is blocked.
+    (Port 443 is normally used for HTTPS but we use it for SSH. Because 443 is used for HTTPS it is completely impractical for someone to block it.)
+    So if you're having trouble connecting, you can try using port 443, by passing the <code>-p 443</code> flag.
+  </div>
+
+  <div><img src="images/5.png" alt="PuTTY configuration window showing port changed to 443" /></div>
+  </div>
+
+
+<div class="step">
+  <div>
     If you want to tunnel over ssh, then you will need to open a dynamic tunnel, using the -D9090 flag.
     This flag tells ssh to open a SOCKS server on port 9090 and tunnel traffic through your ssh connection.
     Here, I type <code>ssh <i>yourusername</i>@anapnea.net -D9090</code> and then open a SSH connection as normal.
@@ -50,7 +61,7 @@
   </div>
 
   <div>
-    <img src="images/5.png" alt="Terminal showing ssh daniel@anapnea.net -D9090" />
+    <img src="images/6.png" alt="Terminal showing ssh daniel@anapnea.net -D9090" />
     <img src="images/4.png" alt="Terminal running ssh, connected to Anapnea." />
   </div>
 </div>
@@ -64,11 +75,11 @@
   </div>
 
   <div>
-    <img src="images/6.png" alt="Ubuntu System->Prefences menu with Network Proxy hilighted" />
-    <img src="images/7.png" alt="Ubuntu Network Proxy settings dialogue" />
+    <img src="images/7.png" alt="Ubuntu System->Prefences menu with Network Proxy hilighted" />
+    <img src="images/8.png" alt="Ubuntu Network Proxy settings dialogue" />
   </div>
   <div>
-    <img src="images/8.png" alt="Mac OSX Network Proxy settings dialogue" />
+    <img src="images/9.png" alt="Mac OSX Network Proxy settings dialogue" />
   </div>
 </div>
 
