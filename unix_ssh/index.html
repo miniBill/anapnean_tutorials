@@ -35,10 +35,19 @@
 
 <div class="step">
   <div>
+    SSH will now ask you to verify anapnea.net's fingerprint. It will only ask you this once, when you first connect. Type <code>yes</code> if the fingerprint is the same as the one shown below.
+    The signature should be exactly the same as the one shown below. For a more in-depth comment on fingerprints, please see the bottom of the page.
+  </div>
+
+  <div><img src="images/4.png" alt="PuTTY fingerprint confirmation box." /></div>
+</div>
+
+<div class="step">
+  <div>
     Job done. Uh. That was it. Told you it was easy :-).
   </div>
 
-  <div><img src="images/4.png" alt="Terminal running ssh, connected to Anapnea." /></div>
+  <div><img src="images/5.png" alt="Terminal running ssh, connected to Anapnea." /></div>
 </div>
 
 <div class="step">
@@ -48,7 +57,7 @@
     So if you're having trouble connecting, you can try using port 443, by passing the <code>-p 443</code> flag.
   </div>
 
-  <div><img src="images/5.png" alt="PuTTY configuration window showing port changed to 443" /></div>
+  <div><img src="images/6.png" alt="PuTTY configuration window showing port changed to 443" /></div>
   </div>
 
 
@@ -61,8 +70,8 @@
   </div>
 
   <div>
-    <img src="images/6.png" alt="Terminal showing ssh daniel@anapnea.net -D9090" />
-    <img src="images/4.png" alt="Terminal running ssh, connected to Anapnea." />
+    <img src="images/7.png" alt="Terminal showing ssh daniel@anapnea.net -D9090" />
+    <img src="images/5.png" alt="Terminal running ssh, connected to Anapnea." />
   </div>
 </div>
 
@@ -75,11 +84,11 @@
   </div>
 
   <div>
-    <img src="images/7.png" alt="Ubuntu System->Prefences menu with Network Proxy hilighted" />
-    <img src="images/8.png" alt="Ubuntu Network Proxy settings dialogue" />
+    <img src="images/8.png" alt="Ubuntu System->Prefences menu with Network Proxy hilighted" />
+    <img src="images/9.png" alt="Ubuntu Network Proxy settings dialogue" />
   </div>
   <div>
-    <img src="images/9.png" alt="Mac OSX Network Proxy settings dialogue" />
+    <img src="images/10.png" alt="Mac OSX Network Proxy settings dialogue" />
   </div>
 </div>
 
@@ -90,6 +99,16 @@
   </div>
 
   <div><img src="../images/tunneling_check.png" alt="View of check.php verifying successful tunneling." /></div>
+</div>
+
+<div class="step">
+  <div>A short note on signatures.</div>
+
+  <div>
+    All SSH Traffic is encrypted. But how do you know that the server you're connecting to is really Anapnea?
+    The answer is the fingerprint. This is not the place for an explanation of how or why it works, but it is very very important that you verify that the fingerprint is correct.
+    However, do note that it is trivial, infact easier, to intercept HTTP than it is SSH. So there's no guarantee that the image above hasn't been tampered with. If you want to be <i>really</i> paranoid-grade sure, then you could perhaps check the fingerprint on <a href="http://anapnea.net/">the homepage</a> from another computer or another location. You can also chat to us on IRC about it.
+  </div>
 </div>
 
   </body>
