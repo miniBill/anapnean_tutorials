@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Connecting from Linux or Mac systems</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+<div id="title">Connecting from Linux or Mac systems</div>
+
+<div class="step">
+  <div>
+    Virtually every *nix based operating system comes with a terminal emulator and the openssh client pre installed.
+    These two are all you need to connect to anapnea, so it's super easy. Start by opening a terminal. These screenshots
+    are from Ubuntu but should illustrate what you have to do on any OS.
+    (<a href='../putty_connecting'>If you're on windows, here's a link to a PuTTY guide</a>.)
+  </div>
+
+  <div><img src="images/1.png" alt="Opening a terminal from the menu." \></div>
+</div>
+
+<div class="step">
+  <div>
+    If you've got an Anapnea account then you're either already familiar with the unix command line, or soon will be.
+    Type <code>ssh <i>yourusername</i>@anapnea.net</code>. This runs the ssh command, passing <i>yourusername@anapnea.net</i>
+    as the only argument.
+  </div>
+
+  <div><img src="images/2.png" alt="Terminal open with ssh daniel@anapnea.net typed." \></div>
+</div>
+
+<div class="step">
+  <div>
+    Job done. Uh. That was it. Told you it was easy :-).
+  </div>
+
+  <div><img src="images/3.png" alt="Terminal running ssh, connected to Anapnea." \></div>
+</div>
+
+<div class="step">
+  <div>
+    If you want to tunnel over ssh, then you will need to open a dynamic tunnel, using the -D9090 flag.
+    This flag tells ssh to open a SOCKS server on port 9090 and tunnel traffic through your ssh connection.
+    Here, I type <code>ssh <i>yourusername</i>@anapnea.net -D9090</code> and then open a SSH connection as normal.
+    You will need to leave this terminal open since the ssh program is keeping your tunnel open for you.
+  </div>
+
+  <div>
+    <img src="images/4.png" alt="Terminal showing ssh daniel@anapnea.net -D9090" \>
+    <img src="images/3.png" alt="Terminal running ssh, connected to Anapnea." \></div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Finally, set up your browser to use the SOCKS tunnel. The menu that you have to go through to find a dialogue similar to the
+    one below will differ for each OS, but it shouldn't be too hard to find. A screenshot of how to find the one for Ubuntu
+    is shown below. Once you've found it, enter localhost:9090 as the SOCKS proxy and close the dialogue.
+  </div>
+
+  <div>
+    <img src="images/5.png" alt="Ubuntu System->Prefences menu with Network Proxy hilighted" \>
+    <img src="images/6.png" alt="Ubuntu Network Proxy settings dialogue" \>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Finally, you may like to use a website that tells you your IP address, in order to verify that tunneling is working correctly.
+    We have hosted <a href='../tunneling_check.php'>a small file</a> that will verify that you are tunneling your browsing through Anapnea.
+  </div>
+
+  <div><img src="../images/tunneling_check.png" alt="View of check.php verifying successful tunneling." \></div>
+</div>
+
+  </body>
+</html>
