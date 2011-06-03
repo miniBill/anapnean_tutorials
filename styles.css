@@ -1,0 +1,32 @@
+html, body
+{
+  font-size:    1em;
+  font-family:  sans-serif;
+  color:        #000000;
+}
+
+a
+{
+  text-decoration: none;
+  color:           #0000ff;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
+div#title
+{
+  padding: 0.5em 1.5em;
+  color: #ff00ff;
+  font-size: 320%;
+  font-weight: bold;
+}
+
+div.step
+{
+  padding: 1em;
+  margin: 1em;
+  border: #888 dashed 2px;
+}

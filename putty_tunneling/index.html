@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Tunneling</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+<div id="title">Tunneling</div>
+
+<div class="step">
+  <div>
+    This guide assumes you are using Windows and have already set up PuTTY to connect. <a href='../putty_connecting'>If not, have a look here</a>.
+    Don't worry linux or mac users, tunneling is so rediculously simple there it doesn't need <a href='../unix_ssh'>so much of a guide</a>.
+  </div>
+
+  <div><img src="images/1.png" alt="Picture of PuTTY main config screen, ready to connect to anapnea.net." \></div>
+</div>
+
+<div class="step">
+  <div>
+    Navigate to the Tunnels configuration page, and add a new dynamic tunnel on port 9090.
+    The port you use doesn't actually matter, however for this example we'll use 9090.
+    If you can't use 9090, you must remember to use the same port here as you do later.
+  </div>
+
+  <div><img src="images/2.png" alt="Choose Connection, SSH, Tunnels. Put 9090 in Source Port, choose the Dynamic option, and click Add." \></div>
+</div>
+
+<div class="step">
+  <div>
+    Verify that the Tunnels page now looks like this. The important bit is D9090 in the list.
+    Now that you've added it, click Open and connect as you would normally do.
+  </div>
+
+  <div><img src="images/3.png" alt="Tunneling page with D9090 in the forwarded ports list and Open selected." \></div>
+</div>
+
+<div class="step">
+  <div>
+    Having connected, you are now tunneling over SSH. You need to leave this window open the whole time while you browse, since PuTTY is keeping the tunnel open.
+  </div>
+
+  <div><img src="images/4.png" alt="PuTTY terminal open." \></div>
+</div>
+
+<div class="step">
+  <div>
+    Clicking on Settings in Internet Explorer, or Proxy Settings in Google Chrome, should open this dialogue.
+    Navigate through to the Advanced Proxy section and add localhost:9090 as a SOCKS Proxy.
+  </div>
+
+  <div>
+    <img src="images/5.png" alt="Connections tab of Internet Properties, LAN Settings selected." \>
+    <img src="images/6.png" alt="Picture of LAN Settings dialogue, choose Advanced" \>
+    <img src="images/7.png" alt="Picture of Advanced Proxy Settings dialogue with localhost 9090 setup as the SOCKS Proxy" \>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Finally, you may like to use a website that tells you your ip address, in order to verify that tunneling is working correctly.
+    We have hosted <a href='check.php'>a small file</a> that will verify that you are tunneling your browsing through anapnea.
+  </div>
+
+  <div><img src="images/8.png" alt="View of check.php verifying successful tunneling." \></div>
+</div>
+
+  </body>
+</html>
