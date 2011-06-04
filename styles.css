@@ -24,6 +24,16 @@ div#title
   font-weight: bold;
 }
 
+div#footer
+{
+  font-size: 80%;
+}
+
+body.tutorial div#footer
+{
+  text-align: center;
+}
+
 div.step
 {
   margin: 1em;
