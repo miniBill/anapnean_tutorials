@@ -109,6 +109,12 @@
     All SSH Traffic is encrypted. But how do you know that the server you're connecting to is really Anapnea?
     The answer is the fingerprint. This is not the place for an explanation of how or why it works, but it is very very important that you verify that the fingerprint is correct.
     However, do note that it is trivial, infact easier, to intercept HTTP than it is SSH. So there's no guarantee that the image above hasn't been tampered with. If you want to be <i>really</i> paranoid-grade sure, then you could perhaps check the fingerprint on <a href="http://anapnea.net/">the homepage</a> from another computer or another location. You can also chat to us on IRC about it.
+    So, in the end, your connection will be secure if (and only if):
+    <ul>
+      <li>you can trust your client (that is, openssh. if you have installed it from your distro package manager then this means trusting your distro maintainers),</li>
+      <li>you can trust your computer (it's useless to have an encrypted connection if someone can just spy your whole desktop, either using some malware or just looking over your shoulder),</li>
+      <li>you can trust the fingerprint to be correct.</li>
+    </ul>
   </div>
 </div>
 
