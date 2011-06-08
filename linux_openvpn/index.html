@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Using the Anapnean VPN (Linux)</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tutorial">
+
+<div id="title">Using the Anapnean VPN (Linux)</div>
+
+<div class="step">
+  <div>
+    To start with, we're going to need three things: the OpenVPN client, a configuration
+    file for the client, and Anapnea's certificate.
+  </div>
+
+  <div>
+    Install OpenVPN using your Linux distribution's package manager. Below, I'm using
+    aptitude (Debian-based systems). The configuration and certificate are available
+    <a href='http://anapnea.net/vpn.php'>on anapnea's website</a>. Rather than copy and
+    paste the configuration you can <a href='anapnea.cfg'>download this file</a>.
+  </div>
+
+  <div>
+    Run these commands on the client computer: your laptop or desktop. I make a directory
+    and store all the files inside that to keep things tidy. You will need sudo (root) access.
+    <i>Note: I use scp to download these files rather than wget so that I can be confident that
+    they have not been tampered with. HTTP can be intercepted easily, but SSH cannot.</i>
+  </div>
+
+  <div class="terminal">
+<div>daniel@desktop:~$ sudo aptitude -y install openvpn
+<i>[...]</i>
+The following NEW packages will be installed:
+  libpkcs11-helper1{a} openssl-blacklist{a} openvpn openvpn-blacklist{a} 
+<i>[...]</i></div>
+<div>daniel@desktop:~$ mkdir anapnea_vpn</div>
+<div>daniel@desktop:~$ cd anapnea_vpn</div>
+<div>daniel@desktop:anapnea_vpn$ scp daniel@anapnea.net:/var/www/tutorials/linux_openvpn/anapnea.{cfg,crt} .
+anapnea.cfg                                   100%  145     0.1KB/s   00:00    
+anapnea.crt                                   100% 1342     1.3KB/s   00:00    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Okay, now let's connect. Running this command will start the OpenVPN client.
+    It will ask you for your username and password. These are the same credentials you use
+    to log into SSH.
+  </div>
+
+  <div class="terminal">
+<div>daniel@anapnea:~$ cd www</div>
+<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.cfg 
+Wed Jun  8 20:57:01 2011 OpenVPN 2.1.0 x86_64-pc-linux-gnu [SSL] [LZO2] [EPOLL] [PKCS11] [MH] [PF_INET6] [eurephia] built on Jul 20 2010
+Enter Auth Username:daniel
+Enter Auth Password:
+[... lots of spam ...]</div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Eventually you should see the following lines:
+  </div>
+
+  <div class="terminal">
+<div>Wed Jun  8 20:57:10 2011 /sbin/ifconfig tap0 10.0.8.2 netmask 255.255.255.0 mtu 1500 broadcast 10.0.8.255
+Wed Jun  8 20:57:10 2011 Initialization Sequence Completed</div>
+  </div>
+
+  <div>
+    This means you are connected! All of your traffic to the internet and your LAN is
+    completely unaffected, however, you can now communicate with other Anapnea users
+    that are connected to the VPN. All Anapnea VPN IP addresses begin with
+    <code>10.0.8</code>. In this example, I've been given IP <code>10.0.8.2</code>.
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    If you use the <code>route</code> you can confirm that traffic is going to the correct
+    places.
+  </div>
+
+  <div class="terminal">
+<div>daniel@desktop:anapnea_vpn$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+localnet        *               255.255.255.0   U     0      0        0 eth0
+10.0.8.0        *               255.255.255.0   U     0      0        0 tap0
+default         192.168.0.1     0.0.0.0         UG    100    0        0 eth0</div>
+  </div>
+
+  <div>
+    Here, all traffic (the "default route") goes via my router, <code>192.168.0.1</code>,
+    except for localhost traffic (the first line) and traffic to any IP address beginning
+    with <code>10.0.8</code> (the second line).
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    To disconnect, send Ctrl-C the OpenVPN client. Otherwise, you'll need to keep that terminal
+    open while you use the VPN.
+  </div>
+
+  <div class="terminal">
+<div>^C
+Wed Jun  8 21:04:29 2011 SIGINT[hard,] received, process exiting</div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    When you want to use the VPN again, you only need these two commands:
+  </div>
+
+  <div class="terminal">
+<div>daniel@desktop:~$ cd anapnea_vpn</div>
+<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.cfg</div>
+  </div>
+</div>
+
+<div id="footer">
+  This work is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</div>
+
+  </body>
+</html>
