@@ -67,7 +67,8 @@ div.terminal div:first-child { border-top: 0; }
 div.terminal div.hilight
 {
   font-weight: bold;
-  background-color: #444;
+  background-color: #222;
+  color: yellow;
 }
 
 span.ls_dir { color: blue; }
