@@ -45,3 +45,23 @@ div.step div
 {
   margin: 1em;
 }
+
+div.terminal
+{
+  background-color: black;
+  padding: 0.5em;
+}
+
+div.terminal div
+{
+  color: white;
+  font-family: monospace;
+  white-space: pre;
+  margin: 0;
+}
+
+div.terminal div.hilight
+{
+  font-weight: bold;
+  background-color: #444;
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Using your Anapnean Webspace</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tutorial">
+
+<div id="title">Using your Anapnean Webspace</div>
+
+<div class="step">
+  <div>
+    You can either create files to put on your website with a text editor while logged in over ssh
+    (<a href="../putty_connecting/">Windows</a>, <a href="../unix_ssh/">Linux or Mac</a>), or
+    <a href="../filezilla/">use an SFTP client</a>. In this example I'll ssh in and use nano.
+  </div>
+
+  <div>
+    The first step, once you have logged in, is to change into the <code>www</code> directory.
+    (It's actually a sym-link to /home/www/yourusername.) Once there, for example, let's create
+    a file called test.txt.
+  </div>
+
+  <div class="terminal">
+<div>daniel@anapnea:~$ cd www</div>
+<div>daniel@anapnea:www$ nano test.txt</div>
+<div>Hello World</div>
+<div><i>Ctrl-X y enter</i> [exit, saving changes]</div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    However, since Anapnea's umask is 077 in the name of security, all new files are by default
+    only readable by your user. They need to be made world-readable if the web server is to
+    read them. You will notice that you get a 403 Forbidden error until you do this step.
+  </div>
+
+  <div class="terminal">
+<div>daniel@anapnea:~$ cd www</div>
+<div>daniel@anapnea:www$ ls -l
+-rw------- 1 daniel daniel 10 Jun  8 15:47 <font color="green">test.txt</font></div>
+<div class="hilight">daniel@anapnea:www$ chmod a+rX test.txt</div>
+<div>daniel@anapnea:www$ ls -l
+-rw-r--r-- 1 daniel daniel 10 Jun  8 15:47 <font color="green">test.txt</font></div>
+  </div>
+
+  <div>
+    The chmod command below makes every file world readable, recursively. You could use this if,
+    for example, you had just used sftp to upload a large number of files and wanted to make
+    them all accessible.
+  </div>
+
+  <div class="terminal">
+<div>daniel@anapnea:www$ ls -lAR
+.:
+drwx------ 2 daniel daniel 4096 Jun  8 15:50 <font color="blue">images</font>
+-rw------- 1 daniel daniel   10 Jun  8 15:47 <font color="green">test.txt</font>
+
+./images:
+-rw------- 1 daniel daniel  124 Jun  8 15:50 <font color="purple">a.jpg</font>
+-rw------- 1 daniel daniel  235 Jun  8 15:50 <font color="purple">b.jpg</font>
+-rw------- 1 daniel daniel  475 Jun  8 15:50 <font color="purple">c.jpg</font>
+-rw------- 1 daniel daniel  152 Jun  8 15:50 <font color="purple">d.jpg</font></div>
+<div class="hilight">daniel@anapnea:www$ chmod -R a+rX *</div>
+<div>daniel@anapnea:www$ ls -laR
+.:
+drwxr-xr-x 2 daniel daniel 4096 Jun  8 15:50 <font color="blue">images</font>
+-rw-r--r-- 1 daniel daniel   10 Jun  8 15:47 <font color="green">test.txt</font>
+
+./images:
+total 8
+drwxr-xr-x 2 daniel daniel 4096 Jun  8 15:50 .
+drwx------ 3 daniel daniel 4096 Jun  8 15:50 ..
+-rw-r--r-- 1 daniel daniel  124 Jun  8 15:50 <font color="purple">a.jpg</font>
+-rw-r--r-- 1 daniel daniel  235 Jun  8 15:50 <font color="purple">b.jpg</font>
+-rw-r--r-- 1 daniel daniel  475 Jun  8 15:50 <font color="purple">c.jpg</font>
+-rw-r--r-- 1 daniel daniel  152 Jun  8 15:50 <font color="purple">d.jpg</font></div>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    You can now view your website at <code>http://<i>yourusername</i>.users.anapnea.net</code>; that is,
+    the file <code>www/test.txt</code> would be available at <code>http://<i>yourusername</i>.users.anapnea.net/test.txt</code>.
+    Note that one of the perks of <a href="http://anapnea.net/donate.php">Purple Prime</a> is the ability
+    to host your own domain on Anapnea.
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    If you create a file named <code>index.html</code> then that file will be displayed instead of the default
+    directory listing page (the one that says '<code>Index of /</code>').
+  </div>
+
+  <div>
+    Finally, a note about Anapnea's webspace: Only put content in your <code>www</code> directory if you are comfortable
+    with anyone in the world being able to see it, especially since anyone with an account on Anapnea can look at
+    the data inside your <code>www</code> directory.
+</div>
+
+  </body>
+</html>
