@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Using SSH keys</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tutorial">
+
+<div id="title">Using SSH keys (*NIX)</div>
+
+<div class="step">
+  <div>
+    This guide assumes that you're already able to connect to Anapnea via SSH using a password.  If not, please read the <a href="../unix_ssh/index.html">connection guide</a> for Linux or Mac OS X.
+    <br />
+    <br />
+    SSH public key authentication allows you to use one identity to connect to multiple servers.  It also provides enhanced security by ensuring that you password is never transmitted.
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Open a Terminal and type <code>ssh-keygen -t rsa</code>.  This will generate a public/private key pair used for authentication.
+    <div><img src="images/1.png" alt="You can leave the filename as the default." /></div>
+    You can leave the key file name to its default.
+    <br />
+    <br />
+    <em>Use a passphrase!  Anyone that has access to your private key will be able to log in as you!</em>
+    <br />
+    <br />
+    <em><strong>Note:</strong> Keep your private key secure!  Don't give it out to others or leave it in a insecure location.</em>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    Copy the SSH public key to the proper location on the remote server.  Replace <em>username</em> with your Anapnea username.
+    <br />
+    <br />
+    <code>scp .ssh/id_rsa.pub <em>username</em>@anapnea.net:.ssh/authorized_keys</code>
+    <br />
+    <br />
+    <em><strong>Note:</strong> This will overwrite any existing authorized keys for your remote account.</em>
+  </div>
+</div>
+
+<div class="step">
+  <div>
+  	Try connecting to Anapnea via SSH.  You should not have to enter your password to log in, unless you have used a passphrase with your key, which is not sent to the server.
+  </div>
+</div>
+
+<div id="footer">
+  This work is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</div>
+
+  </body>
+</html>
