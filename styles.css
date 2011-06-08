@@ -49,16 +49,20 @@ div.step div
 div.terminal
 {
   background-color: black;
-  padding: 0.5em;
+  padding: 0.2em 0.5em;
 }
 
 div.terminal div
 {
   color: white;
   font-family: monospace;
-  white-space: pre;
+  white-space: pre-line;
   margin: 0;
+  padding: 0.3em 0;
+  border-top: 1px gray dashed;
 }
+
+div.terminal div:first-child { border-top: 0; }
 
 div.terminal div.hilight
 {
