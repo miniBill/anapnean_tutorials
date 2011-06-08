@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Using FileZilla</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tutorial">
+
+<div id="title">Using FileZilla</div>
+
+<div class="step">
+  <div>
+    FileZilla is a moderatly popular SFTP client. Anapnea does not have a FTP server, because FTP is insecure.
+    Instead you can use SFTP, which isn't strictly FTP over SSH, but it's close. FileZilla uploads and downloads
+    files from Anapnea only; if you want to use the terminal, you'll need a normal SSH client.
+    (<a href="../putty_connecting/">Windows</a>, <a href="../unix_ssh/">Linux or Mac</a>).
+  </div>
+
+  <div>
+    Start by installing FileZilla. If you're on Mac or Windows, you probably want to
+    <a href='http://filezilla-project.org/download.php?type=client'>download it from their website</a>.
+    Linux users should probably use their built-in package management system. Below, I'm using Synaptic on Ubuntu as an example.
+  </div>
+
+  <div><img src="images/1.png" alt="Synaptic screen, marking FileZilla for installation." /></div>
+</div>
+
+<div class="step">
+  <div>
+    The FileZilla wiki has a fairly comprensive <a href="http://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)">Tutorial</a>,
+    so I'm only going to cover the basics. There's tonnes of documentation at that link.
+  </div>
+
+  <div>
+    Firstly, open FileZilla, and type <code>sftp://anapnea.net</code> into the Host box, and put your username and password in
+    their respective boxes. Press QuickConnect to connect to Anapnea and verify the fingerprint.
+    The advice that can be found at the bottom of the <a href="../unix_ssh/">Connecting to SSH</a> article
+    with regards to fingerprints remains important and still applies here.
+  </div>
+
+  <div>
+    <img src="images/2.png" alt="Menu, opening FileZilla" />
+    <img src="images/3.png" alt="FileZilla open, details typed in" />
+    <img src="images/4.png" alt="FileZilla: verifying fingerprint" />
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    The left hand side represnts files on your computer, and the right hand side represents files on Anapnea.
+    You can navigate both the same way you might do in Nautilus (Linux) or Explorer (Windows).
+    Files are copied from one to the other by dragging and dropping.
+  </div>
+
+  <div><img src="images/5.png" alt="Dragging a file to Anapnea" /></div>
+</div>
+
+<div class="step">
+  <div>
+    The transfer should appear in the Succesful transfers tab to let you know that it completed.
+    The file you coped will now appear in its new location.
+  </div>
+
+  <div><img src="images/6.png" alt="Dragging a file to Anapnea" /></div>
+</div>
+
+<div class="step">
+  <div>
+    SFTP operates on the same port as SSH, that is, by default, 22. If you need to use port 443, then
+    type <code>sftp://anapnea.net:443</code> into the Host box instead of just <code>sftp://anapnea.net</code>.
+  </div>
+</div>
+
+<div id="footer">
+  This work is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</div>
+
+  </body>
+</html>
