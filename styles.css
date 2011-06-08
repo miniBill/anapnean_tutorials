@@ -65,3 +65,7 @@ div.terminal div.hilight
   font-weight: bold;
   background-color: #444;
 }
+
+span.ls_dir { color: blue; }
+span.ls_txt { color: green; }
+span.ls_img { color: purple; }

@@ -40,10 +40,10 @@
   <div class="terminal">
 <div>daniel@anapnea:~$ cd www</div>
 <div>daniel@anapnea:www$ ls -l
--rw------- 1 daniel daniel 10 Jun  8 15:47 <font color="green">test.txt</font></div>
+-rw------- 1 daniel daniel 10 Jun  8 15:47 <span class="ls_txt">test.txt</span></div>
 <div class="hilight">daniel@anapnea:www$ chmod a+rX test.txt</div>
 <div>daniel@anapnea:www$ ls -l
--rw-r--r-- 1 daniel daniel 10 Jun  8 15:47 <font color="green">test.txt</font></div>
+-rw-r--r-- 1 daniel daniel 10 Jun  8 15:47 <span class="ls_txt">test.txt</span></div>
   </div>
 
   <div>
@@ -55,28 +55,28 @@
   <div class="terminal">
 <div>daniel@anapnea:www$ ls -lAR
 .:
-drwx------ 2 daniel daniel 4096 Jun  8 15:50 <font color="blue">images</font>
--rw------- 1 daniel daniel   10 Jun  8 15:47 <font color="green">test.txt</font>
+drwx------ 2 daniel daniel 4096 Jun  8 15:50 <span class="ls_dir">images</span>
+-rw------- 1 daniel daniel   10 Jun  8 15:47 <span class="ls_txt">test.txt</span>
 
 ./images:
--rw------- 1 daniel daniel  124 Jun  8 15:50 <font color="purple">a.jpg</font>
--rw------- 1 daniel daniel  235 Jun  8 15:50 <font color="purple">b.jpg</font>
--rw------- 1 daniel daniel  475 Jun  8 15:50 <font color="purple">c.jpg</font>
--rw------- 1 daniel daniel  152 Jun  8 15:50 <font color="purple">d.jpg</font></div>
+-rw------- 1 daniel daniel  124 Jun  8 15:50 <span class="ls_img">a.jpg</span>
+-rw------- 1 daniel daniel  235 Jun  8 15:50 <span class="ls_img">b.jpg</span>
+-rw------- 1 daniel daniel  475 Jun  8 15:50 <span class="ls_img">c.jpg</span>
+-rw------- 1 daniel daniel  152 Jun  8 15:50 <span class="ls_img">d.jpg</span></div>
 <div class="hilight">daniel@anapnea:www$ chmod -R a+rX *</div>
 <div>daniel@anapnea:www$ ls -laR
 .:
-drwxr-xr-x 2 daniel daniel 4096 Jun  8 15:50 <font color="blue">images</font>
--rw-r--r-- 1 daniel daniel   10 Jun  8 15:47 <font color="green">test.txt</font>
+drwxr-xr-x 2 daniel daniel 4096 Jun  8 15:50 <span class="ls_dir">images</span>
+-rw-r--r-- 1 daniel daniel   10 Jun  8 15:47 <span class="ls_txt">test.txt</span>
 
 ./images:
 total 8
 drwxr-xr-x 2 daniel daniel 4096 Jun  8 15:50 .
 drwx------ 3 daniel daniel 4096 Jun  8 15:50 ..
--rw-r--r-- 1 daniel daniel  124 Jun  8 15:50 <font color="purple">a.jpg</font>
--rw-r--r-- 1 daniel daniel  235 Jun  8 15:50 <font color="purple">b.jpg</font>
--rw-r--r-- 1 daniel daniel  475 Jun  8 15:50 <font color="purple">c.jpg</font>
--rw-r--r-- 1 daniel daniel  152 Jun  8 15:50 <font color="purple">d.jpg</font></div>
+-rw-r--r-- 1 daniel daniel  124 Jun  8 15:50 <span class="ls_img">a.jpg</span>
+-rw-r--r-- 1 daniel daniel  235 Jun  8 15:50 <span class="ls_img">b.jpg</span>
+-rw-r--r-- 1 daniel daniel  475 Jun  8 15:50 <span class="ls_img">c.jpg</span>
+-rw-r--r-- 1 daniel daniel  152 Jun  8 15:50 <span class="ls_img">d.jpg</span></div>
   </div>
 </div>
 
