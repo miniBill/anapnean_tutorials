@@ -74,3 +74,5 @@ div.terminal div.hilight
 span.ls_dir { color: blue; }
 span.ls_txt { color: green; }
 span.ls_img { color: purple; }
+
+img { vertical-align: middle; }
