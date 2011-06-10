@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Using the Anapnean VPN (Windows)</title>
+    <link href="../styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="tutorial">
+
+<div id="title">Using the Anapnean VPN (Windows)</div>
+
+<div class="step">
+  <div>
+    To start with, we're going to download three things:
+    <ul>
+      <li><a href="http://openvpn.net/index.php/open-source/downloads.html">the OpenVPN client</a> (choose the "Windows installer")</li>
+      <li><a href="anapnea.ovpn">a configuration file for the client</a></li>
+      <li><a href="anapnea.crt">and Anapnea's CA certificate</a></li>
+    </ul>
+    Install the OpenVPN software, and then copy the two files you downloaded, <code>anapnea.ovpn</code> and <code>anapnea.crt</code> into
+    the <code>C:\Program Files\OpenVPN\config</code> directory, as shown below.
+  </div>
+
+  <div><img src="images/1.png" alt="OpenVPN config folder with two files copied into it." /></div>
+</div>
+
+<div class="step">
+  <div>
+    Okay, now let's connect. Click on the OpenVPN Gui shortcut on your desktop or in the OpenVPN folder in the Applications menu.
+    No application window will open, however, an icon will appear in the notification area. Right click it, and select connect.
+  </div>
+
+  <div>
+    <img src="images/2.png" alt="OpenVPN shortcut" />
+    <img src="images/3.png" alt="OpenVPN notification area menu open, connect selected" />
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    OpenVPN will ask you for your username and password. These are the same credentials you use
+    to log into SSH.
+  </div>
+
+  <div><img src="images/4.png" alt="OpenVPN password dialgue"></div>
+</div>
+
+<div class="step">
+  <div>
+    Eventually you should see the following:
+  </div>
+
+  <div>
+    <img src="images/5.png" alt="OpenVPN log window after connecting" />
+    <img src="images/6.png" alt="OpenVPN notification bubble after connecting" />
+  </div>
+
+  <div>
+    This means you are connected! All of your traffic to the internet and your LAN is
+    completely unaffected, however, you can now communicate with other Anapnea users
+    that are connected to the VPN. All Anapnea VPN IP addresses begin with
+    <code>10.0.8</code>. In this example, I've been given IP <code>10.0.8.2</code>.
+  </div>
+</div>
+
+<div class="step">
+  <div>
+    You can disconnect and reconnect by right clicking the OpenVPN icon in the notification area,
+    and if you close or restart all you need to do to reconnect is to open the OpenVPN GUI,
+    right click, and connect.
+  </div>
+</div>
+
+<div id="footer">
+  This work is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</div>
+
+  </body>
+</html>
