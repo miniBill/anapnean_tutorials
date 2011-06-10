@@ -19,7 +19,7 @@
     Install OpenVPN using your Linux distribution's package manager. Below, I'm using
     aptitude (Debian-based systems). The configuration and certificate are available
     <a href='http://anapnea.net/vpn.php'>on anapnea's website</a>. Rather than copy and
-    paste the configuration you can <a href='anapnea.cfg'>download this file</a>.
+    paste the configuration you can <a href='anapnea.conf'>download this file</a>.
   </div>
 
   <div>
@@ -37,8 +37,8 @@ The following NEW packages will be installed:
 <i>[...]</i></div>
 <div>daniel@desktop:~$ mkdir anapnea_vpn</div>
 <div>daniel@desktop:~$ cd anapnea_vpn</div>
-<div>daniel@desktop:anapnea_vpn$ scp daniel@anapnea.net:/var/www/tutorials/linux_openvpn/anapnea.{cfg,crt} .
-anapnea.cfg                                   100%  145     0.1KB/s   00:00    
+<div>daniel@desktop:anapnea_vpn$ scp daniel@anapnea.net:/var/www/tutorials/linux_openvpn/anapnea.{conf,crt} .
+anapnea.conf                                  100%  145     0.1KB/s   00:00    
 anapnea.crt                                   100% 1342     1.3KB/s   00:00    </div>
   </div>
 </div>
@@ -52,7 +52,7 @@ anapnea.crt                                   100% 1342     1.3KB/s   00:00    <
 
   <div class="terminal">
 <div>daniel@anapnea:~$ cd www</div>
-<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.cfg 
+<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.conf 
 Wed Jun  8 20:57:01 2011 OpenVPN 2.1.0 x86_64-pc-linux-gnu [SSL] [LZO2] [EPOLL] [PKCS11] [MH] [PF_INET6] [eurephia] built on Jul 20 2010
 Enter Auth Username:daniel
 Enter Auth Password:
@@ -119,7 +119,7 @@ Wed Jun  8 21:04:29 2011 SIGINT[hard,] received, process exiting</div>
 
   <div class="terminal">
 <div>daniel@desktop:~$ cd anapnea_vpn</div>
-<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.cfg</div>
+<div>daniel@desktop:anapnea_vpn$ sudo openvpn --config anapnea.conf</div>
   </div>
 </div>
 
