@@ -17,6 +17,15 @@
       <li><a href="anapnea.ovpn">a configuration file for the client</a></li>
       <li><a href="anapnea.crt">and Anapnea's CA certificate</a></li>
     </ul>
+    You may wish to verify the integrity of these files (see a <a href="../putty_connecting">SSH connecting article</a> for more information on why this is important).
+    An easy way to ensure that the Anapnean configuration and certificate files have not been tampered with is to download them using
+    SFTP (SSH is much harder to intercept than HTTP). Download them using a <a href="../filezilla">SFTP client</a> from the
+    <code>/var/www/tutorials/windows_openvpn/</code> folder.
+  </div>
+</div>
+
+<div class="step">
+  <div>
     Install the OpenVPN software, and then copy the two files you downloaded, <code>anapnea.ovpn</code> and <code>anapnea.crt</code> into
     the <code>C:\Program Files\OpenVPN\config</code> directory, as shown below.
   </div>
